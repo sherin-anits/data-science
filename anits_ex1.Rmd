@@ -1,0 +1,163 @@
+---
+title: "ex1"
+author: "Anits Sherin(21bcs065)"
+date: "2024-01-08"
+output: pdf_document
+---
+1. Generate 10 uniformly distributed numbers(0,1)
+```{r}
+uniform_numbers<-runif(10)
+print(uniform_numbers)
+
+```
+
+2. Display them using plot.
+```{r}
+plot(uniform_numbers)
+```
+3. Generate 5 random integers 1:10 with and without replacment
+```{r}
+sample(1:10,5,replace=TRUE)
+sample(1:10,5,replace=FALSE)
+
+```
+4. select 2 random months from a list of months. Combine 2 strings with comma separation.
+```{r}
+months<-month.name
+random_months<-sample(months,size=2)
+combined_months<-paste(random_months,collapse=",")
+print(combined_months)
+```
+5. prefix and suffix word with A
+```{r}
+word<-"example"
+prefixed_word<-paste("A",word,sep="")
+suffixed_word<-paste(word,"A",SEP="")
+print(prefixed_word)
+print(suffixed_word)
+```
+6. Find number of characters in a string.
+```{r}
+my_string<-"this is a string"
+num_chars<-nchar(my_string)
+print(num_chars)`
+
+```
+7. Construct a vector of odd numbers 1 to 10 using seq()
+```{r}
+odd_numbers<-seq(from=1,to=10,by=2)
+print(odd_numbers)
+
+```
+8.Find it's log to the base 10 and sine values.
+```{r}
+number<-15
+log10value<-log10(number)
+sin_value<-sin(number)
+print(paste("log to the base 10:",log10value))
+print(paste("sine value:",sin_value))
+```
+9. find sum, mean, median, length, variance, standard deviation, quantile.
+```{r}
+data<-c(4,8,15,16,23,43)
+sum(data)
+mean(data)
+mean(data)
+median(data)
+length(data)
+var(data)
+quantile(data)
+
+```
+10. find summary on the same
+```{r}
+summary(data)
+
+```
+11. get today's date and time
+```{r}
+print(Sys.time())
+
+```
+12. find your age in days
+```{r}
+today_date<-Sys.Date()
+bday<-as.Date("2003-06-01")
+age<-as.numeric(today_date-bday)
+print(age)
+
+```
+13. convert to lower and upper case
+```{r}
+x<-"hello world"
+lower_text<-tolower(x)
+upper_text<-toupper(x)
+print(lower_text)
+print(upper_text)
+
+```
+14. extract the last three characters of the string.
+```{r}
+string<-"hello world"
+last_three<-substr(string,nchar(string)-2,nchar(string))
+print(last_three)
+
+```
+15.sort the string in lexicographic order
+```{r}
+word<-c("a","n","i","t","s")
+sorted<-sort(word)
+print(sorted)
+```
+16.  display string that starts with A
+```{r}
+strings<-c("apple","Anits","Avocado")
+startswithA<-grep("^A",strings,value=TRUE)
+print(startswithA)
+```
+17. HOW MANY COMMON WORDS START WITH t
+```{r}
+common_words<-c("tent","text","anits")
+t_words<-common_words[startsWith(common_words,"t")]
+
+print(t_words)
+
+```
+18. how many common words end with a vowel
+```{r}
+common_words<-c("hello","apple","tree","mason")
+vowel_words<-grep("[aeiou]$",tolower(common_words))
+c<-length(vowel_words)
+print(c)
+```
+
+19. Find all words containing at least one vowel and negate.
+```{r}
+words <- c("apple", "banana", "grape", "sky", "fly", "dry")
+pattern <- "[aeiou]"
+words_with_vowel <- grep(pattern, words, value = TRUE)
+words_without_vowel <- setdiff(words, words_with_vowel)
+print(words_without_vowel)
+```
+20.find all words consisting only of consonants.
+```{r}
+words <- c("apple", "banana", "grape", "sky", "fly", "dry")
+pattern <- "^[^aeiou]+$"
+consonant_words <- grep(pattern, words, value = TRUE)
+print(consonant_words)
+
+```
+
+
+
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
