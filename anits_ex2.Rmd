@@ -1,0 +1,89 @@
+---
+title: "EX2"
+author: "Anits Sherin (21bcs065)"
+date: "2024-01-22"
+output: pdf_document
+---
+1. write the R/Y command to install a package
+```{r}
+install.packages("tidyverse")
+```
+
+2. load and use a package
+```{r}
+library(tidyverse)
+```
+3. unload a package
+```{r}
+detach
+```
+
+4. update a package
+```{r}
+install.packages("tidyverse", update = TRUE)
+```
+5. Remove an installed package from your computer
+```{r}
+remove.packages("package_name")
+```
+6. load the iris dataset and explore the following
+a) display the structure of Iris dataset 
+```{r}
+data(iris)
+str(iris)
+```
+b) display the column names
+```{r}
+data(iris)
+column_names <- colnames(iris)
+print(column_names)
+```
+c) find the data type / class of each feature or column.
+```{r}
+data(iris)
+column_data_types <- sapply(iris, class)
+print(column_data_types)
+```
+d) display first 10 samples/ row of the dataset.
+```{r}
+data(iris)
+first_10_rows <- head(iris, 10)
+print(first_10_rows)
+```
+e)display last 10 data of the feature Sepal.Length
+```{r}
+data(iris)
+last_10_sepal_length <- tail(iris$Sepal.Length, 10)
+print(last_10_sepal_length)
+```
+f) analyse and produce a summary of the Petal.Length
+```{r}
+data(iris)
+summary(iris$Petal.Length)
+```
+g)find out the number of samples in each class of iris dataset
+```{r}
+data(iris)
+class_counts <- table(iris$Species)
+print(class_counts)
+```
+h) write your iris data as a 'myiris.csv' 
+```{r}
+data(iris)
+write.csv(iris, file = "myiris.csv", row.names = FALSE)
+```
+
+7) load the inbuilt titanic dataset from kaggle and do the following.
+```{r}
+titanic <- read.csv("train.csv")
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
